@@ -1,4 +1,4 @@
-/* abcdefg */ // sustituiir con los 7 dígitos de la cédula
+/* 52865802 */ // sustituiir con los 7 dígitos de la cédula
 
 #include "../include/colCadenas.h"
 #include "../include/cadena.h"
