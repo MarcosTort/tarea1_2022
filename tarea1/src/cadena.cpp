@@ -18,6 +18,7 @@ struct _rep_cadena
 
 TCadena crearCadena()
 {
+  //////printf( "crear cadena");
   return NULL;
 }
 
@@ -28,6 +29,7 @@ void liberarCadena(TCadena cad) {
 
 nat cantidadEnCadena(TCadena cad)
 {
+  //////printf(" cantidad en cadena");
   nat count = 0;
   if (cad == NULL)
   {
@@ -47,7 +49,7 @@ nat cantidadEnCadena(TCadena cad)
 
 bool estaEnCadena(nat natural, TCadena cad)
 {
-
+  //////printf( "esta en cadena");
   if (cad == NULL)
   {
     return false;
@@ -62,10 +64,12 @@ bool estaEnCadena(nat natural, TCadena cad)
 
     return cad != NULL && natInfo(cad->dato) == natural;
   }
+  return true;
 }
 
 TCadena insertarAlInicio(nat natural, double real, TCadena cad)
 {
+  ////////printf("insertar al inicio");
   TCadena q = new _rep_cadena;
   TInfo dato = crearInfo(natural, real);
   q->dato = dato;
@@ -76,7 +80,7 @@ TCadena insertarAlInicio(nat natural, double real, TCadena cad)
 
 TInfo infoCadena(nat natural, TCadena cad)
 {
-
+  ////////printf("info cadena");
   while (natInfo(cad->dato) != natural)
   {
     cad = cad->sig;
@@ -87,6 +91,7 @@ TInfo infoCadena(nat natural, TCadena cad)
 
 TCadena removerDeCadena(nat natural, TCadena cad)
 {
+  ////////printf( "remover de cadena");
   while (natInfo(cad->sig->dato) != natural)
   {
     cad = cad->sig;
@@ -99,8 +104,9 @@ TCadena removerDeCadena(nat natural, TCadena cad)
 
 void imprimirCadena(TCadena cad)
 {
-  while (cad != NULL)
-  {
-    imprimirInfo(cad->dato);
-  }
+  // //////printf( "imprimir cadena");
+  // while (cad != NULL)
+  // {
+  //   imprimirInfo(cad->dato);
+  // }
 }
