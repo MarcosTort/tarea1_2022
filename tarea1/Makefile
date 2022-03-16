@@ -191,7 +191,7 @@ testing:all $(DIFFS)
 
 
 # inlcuye la clave de cada archivo en $(ARCHIVO_CLAVES)
-$(ARCHIVO_CLAVES):
+$(ARCHIVO_CLAVES):$(ENTREGAR:%=$(CPPDIR)/%.$(EXT))
 	rm -f $@
 	$(COMANDO_CLAVES) $(ENTREGAR:%=$(CPPDIR)/%.$(EXT)) > $@
 
