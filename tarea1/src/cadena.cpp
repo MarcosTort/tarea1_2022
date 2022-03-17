@@ -57,15 +57,23 @@ bool estaEnCadena(nat natural, TCadena cad)
   {
     while ((cad != NULL) && (natInfo(cad->dato) != natural))
     {
-      if(cad->sig != NULL){
+      if (cad->sig != NULL)
+      {
         cad = cad->sig;
       }
-      else{
+      else
+      {
         break;
       }
     }
-    if (natInfo(cad->dato) == natural){ return true;}
-    else{ return false;}
+    if (natInfo(cad->dato) == natural)
+    {
+      return true;
+    }
+    else
+    {
+      return false;
+    }
   }
 }
 
@@ -97,25 +105,39 @@ TInfo infoCadena(nat natural, TCadena cad)
  */
 TCadena removerDeCadena(nat natural, TCadena cad)
 {
-  while (natInfo(cad->sig->dato) != natural)
+  if (cad->sig == NULL)
   {
-  
-    cad = cad->sig;
+    delete cad;
+    return NULL;
   }
-  TCadena q = cad->sig;
-  cad = q->sig;
-  delete q;
-  return cad;
+  else
+  {
+    while (natInfo(cad->sig->dato) != natural)
+    {
+      cad = cad->sig;
+    }
+    TCadena q = cad->sig;
+    if (q->sig == NULL)
+    {
+      cad->sig == NULL;
+    }
+    else
+    {
+      cad->sig = q->sig;
+    }
+    delete q;
+    return cad;
+  }
 }
 
 void imprimirCadena(TCadena cad)
 {
-   while (cad != NULL)
+  while (cad != NULL)
   {
     char *dat = infoATexto(cad->dato);
     printf("%s", dat);
     delete[] dat;
     cad = cad->sig;
-   }
-   printf("\n"); 
+  }
+  printf("\n");
 }
