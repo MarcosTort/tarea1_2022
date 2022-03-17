@@ -55,14 +55,12 @@ bool estaEnCadena(nat natural, TCadena cad)
   }
   else
   {
-
     while (cad != NULL && natInfo(cad->dato) != natural)
     {
-      printf("Mierda");
       cad = cad->sig;
     }
-
-    return natInfo(cad->dato) == natural;
+    if (natInfo(cad->dato) == natural){ return true;}
+    else{ return false}
   }
 }
 
