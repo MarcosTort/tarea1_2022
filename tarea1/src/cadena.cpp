@@ -60,7 +60,7 @@ bool estaEnCadena(nat natural, TCadena cad)
       cad = cad->sig;
     }
     if (natInfo(cad->dato) == natural){ return true;}
-    else{ return false}
+    else{ return false;}
   }
 }
 
