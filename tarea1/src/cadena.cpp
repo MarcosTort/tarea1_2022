@@ -56,12 +56,12 @@ bool estaEnCadena(nat natural, TCadena cad)
   else
   {
 
-    while (cad->sig != NULL && natInfo(cad->dato) != natural )
+    while (cad != NULL && natInfo(cad->dato) != natural)
     {
       cad = cad->sig;
     }
 
-    return cad->sig != NULL && natInfo(cad->dato) == natural;
+    return natInfo(cad->dato) == natural;
   }
 }
 
