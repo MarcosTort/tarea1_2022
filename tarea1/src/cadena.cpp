@@ -55,12 +55,17 @@ bool estaEnCadena(nat natural, TCadena cad)
   }
   else
   {
-    while (cad != NULL && natInfo(cad->dato) != natural)
+    while ((cad != NULL) && (natInfo(cad->dato) != natural))
     {
-      cad = cad->sig;
+      if(cad->sig != NULL){
+        cad = cad->sig;
+      }
+      else{
+        break
+      }
     }
     if (natInfo(cad->dato) == natural){ return true;}
-    else{ return false;}
+    else{ return false}
   }
 }
 
