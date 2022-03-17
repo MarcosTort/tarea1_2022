@@ -107,6 +107,7 @@ TCadena removerDeCadena(nat natural, TCadena cad)
 {
   if (cad->sig == NULL)
   {
+    liberarInfo(cad->dato);
     delete cad;
     return NULL;
   }
@@ -125,6 +126,7 @@ TCadena removerDeCadena(nat natural, TCadena cad)
     {
       cad->sig = q->sig;
     }
+    liberarInfo(cad->dato);
     delete q;
     return cad;
   }
