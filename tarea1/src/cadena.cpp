@@ -58,7 +58,7 @@ bool estaEnCadena(nat natural, TCadena cad)
 
     while (cad != NULL && natInfo(cad->dato) != natural)
     {
-      printf("Mierda")
+      printf("Mierda");
       cad = cad->sig;
     }
 
