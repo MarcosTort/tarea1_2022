@@ -105,9 +105,12 @@ TCadena removerDeCadena(nat natural, TCadena cad)
 
 void imprimirCadena(TCadena cad)
 {
-  
    while (cad != NULL)
   {
-     imprimirInfo(cad->dato);
+    char *dat = infoATexto(cad->dato);
+    printf("%s", dat);
+    delete[] dat;
+    cad = cad->siguiente;
    }
+   printf("\n"); 
 }
