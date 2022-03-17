@@ -115,17 +115,21 @@ TCadena removerDeCadena(nat natural, TCadena cad)
   else
   //si tiene mas de un elemento, busco
   {
-    TCadena aux; 
+    TCadena aux = cad;
     while (natInfo(cad->dato) != natural)
     {
+      //guardo posicion actual por si la siguiente encuentra
       aux = cad;
       cad = cad->sig;
     }
+    //q apunta a cad
     TCadena q = cad;
+    //asigno aux a nul si el elemento a remover es el ultimo
     if (q->sig == NULL)
     {
       aux->sig = NULL;
     }
+    //asigno aux al siguiente elemento
     else
     {
       aux->sig = q->sig;
