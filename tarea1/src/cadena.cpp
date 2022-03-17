@@ -69,7 +69,14 @@ bool estaEnCadena(nat natural, TCadena cad)
 
 TCadena insertarAlInicio(nat natural, double real, TCadena cad)
 {
-  ////////printf("insertar al inicio");
+  if(cad == NULL){
+    TCadena q = new _rep_cadena;
+    TInfo dato = crearInfo(natural, real);
+    q->dato = dato;
+    q->sig = NULL;
+    cad = q;
+    return cad;
+  }
   TCadena q = new _rep_cadena;
   TInfo dato = crearInfo(natural, real);
   q->dato = dato;
