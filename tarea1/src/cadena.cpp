@@ -89,7 +89,12 @@ TInfo infoCadena(nat natural, TCadena cad)
 
   return cad->dato;
 }
-
+/*
+  Remueve el primer elemento de 'cad' cuyo componente natural es 'natural'.
+  Se libera la memoria asignada al mismo.
+  Devuelve 'cad'.
+  Precondición: estaEnCadena(natural, cad).
+ */
 TCadena removerDeCadena(nat natural, TCadena cad)
 {
   ////////printf( "remover de cadena");
