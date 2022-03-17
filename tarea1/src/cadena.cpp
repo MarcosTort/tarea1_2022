@@ -105,9 +105,9 @@ TCadena removerDeCadena(nat natural, TCadena cad)
 
 void imprimirCadena(TCadena cad)
 {
-  // //////printf( "imprimir cadena");
-  // while (cad != NULL)
-  // {
-  //   imprimirInfo(cad->dato);
-  // }
+  
+   while (cad != NULL)
+  {
+     imprimirInfo(cad->dato);
+   }
 }
