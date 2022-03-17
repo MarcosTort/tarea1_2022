@@ -67,24 +67,12 @@ bool estaEnCadena(nat natural, TCadena cad)
 
 TCadena insertarAlInicio(nat natural, double real, TCadena cad)
 {
-  if (cad == NULL)
-  {
-    TCadena q = new _rep_cadena;
-    TInfo dato = crearInfo(natural, real);
-    q->dato = dato;
-    q->sig = NULL;
-    cad = q;
-    return cad;
-  }
-  else
-  {
-    TCadena q = new _rep_cadena;
-    TInfo dato = crearInfo(natural, real);
-    q->dato = dato;
-    q->sig = cad;
-    cad = q;
-    return cad;
-  }
+  TCadena q = new _rep_cadena;
+  TInfo dato = crearInfo(natural, real);
+  q->dato = dato;
+  q->sig = cad;
+  cad = q;
+  return cad;
 }
 
 TInfo infoCadena(nat natural, TCadena cad)
