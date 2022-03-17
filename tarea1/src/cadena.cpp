@@ -110,7 +110,7 @@ void imprimirCadena(TCadena cad)
     char *dat = infoATexto(cad->dato);
     printf("%s", dat);
     delete[] dat;
-    cad = cad->siguiente;
+    cad = cad->sig;
    }
    printf("\n"); 
 }
