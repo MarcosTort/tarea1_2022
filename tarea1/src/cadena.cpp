@@ -105,7 +105,7 @@ TInfo infoCadena(nat natural, TCadena cad)
  */
 TCadena removerDeCadena(nat natural, TCadena cad)
 {
-  //si tiene solo un elemento, borro info y cad
+  // si tiene solo un elemento, borro info y cad
   if (cad->sig == NULL)
   {
     liberarInfo(cad->dato);
@@ -113,30 +113,41 @@ TCadena removerDeCadena(nat natural, TCadena cad)
     return NULL;
   }
   else
-  //si tiene mas de un elemento, busco
+  // si tiene mas de un elemento, busco
   {
-    TCadena aux = cad;
-    while (natInfo(cad->dato) != natural)
+    //pregunto si el buscado está en el inicio
+    if (natInfo(cad->dato) == natural)
     {
-      //guardo posicion actual por si la siguiente encuentra
-      aux = cad;
-      cad = cad->sig;
+      TCadena aux = cad;
+      liberarInfo(aux->dato);
+      delete aux;
+      return cad;
     }
-    //q apunta a cad
-    TCadena q = cad;
-    //asigno aux a nul si el elemento a remover es el ultimo
-    if (q->sig == NULL)
-    {
-      aux->sig = NULL;
-    }
-    //asigno aux al siguiente elemento
     else
     {
-      aux->sig = q->sig;
+      TCadena aux = cad;
+      while (natInfo(cad->dato) != natural)
+      {
+        // guardo posicion actual por si la siguiente encuentra
+        aux = cad;
+        cad = cad->sig;
+      }
+      // q apunta a cad
+      TCadena q = cad;
+      // asigno aux a nul si el elemento a remover es el ultimo
+      if (q->sig == NULL)
+      {
+        aux->sig = NULL;
+      }
+      // asigno aux al siguiente elemento
+      else
+      {
+        aux->sig = q->sig;
+      }
+      liberarInfo(q->dato);
+      delete q;
+      return cad;
     }
-    liberarInfo(q->dato);
-    delete q;
-    return cad;
   }
 }
 
