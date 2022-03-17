@@ -97,13 +97,13 @@ TInfo infoCadena(nat natural, TCadena cad)
  */
 TCadena removerDeCadena(nat natural, TCadena cad)
 {
-  ////////printf( "remover de cadena");
   while (natInfo(cad->sig->dato) != natural)
   {
+  
     cad = cad->sig;
   }
   TCadena q = cad->sig;
-  cad->sig = q->sig;
+  cad = q->sig;
   delete q;
   return cad;
 }
