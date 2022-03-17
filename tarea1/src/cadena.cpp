@@ -119,7 +119,7 @@ TCadena removerDeCadena(nat natural, TCadena cad)
     TCadena q = cad->sig;
     if (q->sig == NULL)
     {
-      cad->sig == NULL;
+      cad->sig = NULL;
     }
     else
     {
