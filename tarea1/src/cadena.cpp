@@ -49,7 +49,6 @@ nat cantidadEnCadena(TCadena cad)
 
 bool estaEnCadena(nat natural, TCadena cad)
 {
-  //////printf( "esta en cadena");
   if (cad == NULL)
   {
     return false;
@@ -57,14 +56,13 @@ bool estaEnCadena(nat natural, TCadena cad)
   else
   {
 
-    while (natInfo(cad->dato) != natural && cad != NULL)
+    while (cad->sig != NULL && natInfo(cad->dato) != natural )
     {
       cad = cad->sig;
     }
 
-    return cad != NULL && natInfo(cad->dato) == natural;
+    return cad->sig != NULL && natInfo(cad->dato) == natural;
   }
-  return true;
 }
 
 TCadena insertarAlInicio(nat natural, double real, TCadena cad)
