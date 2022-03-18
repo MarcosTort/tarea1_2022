@@ -117,11 +117,11 @@ TCadena removerDeCadena(nat natural, TCadena cad)
   // si tiene mas de un elemento, busco
   {
     TCadena cadd = cad;
+    
     //pregunto si el buscado está en el inicio
     if (natInfo(cadd->dato) == natural)
     {
       TCadena aux = cadd;
-      cadd = cadd->sig;
       liberarInfo(aux->dato);
       delete aux;
       return cad;
