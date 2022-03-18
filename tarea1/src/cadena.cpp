@@ -18,7 +18,6 @@ struct _rep_cadena
 
 TCadena crearCadena()
 {
-  //////printf( "crear cadena");
   return NULL;
 }
 
@@ -29,7 +28,6 @@ void liberarCadena(TCadena cad) {
 
 nat cantidadEnCadena(TCadena cad)
 {
-  //////printf(" cantidad en cadena");
   nat count = 0;
   if (cad == NULL)
   {
@@ -121,11 +119,14 @@ TCadena removerDeCadena(nat natural, TCadena cad)
     //pregunto si el buscado está en el inicio
     if (natInfo(cadd->dato) == natural)
     {
+      TCadena newStart = cadd->sig;
       TCadena aux = cadd;
       liberarInfo(aux->dato);
       delete aux;
-      return cad;
+      return newStart;
     }
+
+    
     else
     {
       TCadena aux = cadd;
