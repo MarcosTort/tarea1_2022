@@ -107,7 +107,7 @@ $(EJECUTABLE):$(ODIR)/$(PRINCIPAL).o $(OS)
 	$(LD) $(CCFLAGS) $^ -o $@
 
 # casos de prueba
-CASOS = 11 12 13 14 21 22 23 24
+CASOS = 11 12 13 14 21 22 23 24 A B C D E F
 
 
 # cadena de archivos, con directorio y extensión
